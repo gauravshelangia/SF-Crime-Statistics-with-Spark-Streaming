@@ -33,8 +33,8 @@ def run_spark_job(spark):
         .option("kafka.bootstrap.servers", "localhost:9092") \
         .option("subscribe", "police_calls-4") \
         .option("startingOffsets", "earliest") \
-        .option("maxRatePerPartition", 40000) \
-        .option("maxOffsetPerTrigger", 40000) \
+        .option("maxRatePerPartition", 100) \
+        .option("maxOffsetPerTrigger", 100) \
         .load()
 
     # Show schema for the incoming resources for checks
@@ -69,7 +69,6 @@ def run_spark_job(spark):
         .groupBy(
         psf.window(distinct_table.call_date_time, "10 minutes", "10 minutes"),
         psf.col("original_crime_type_name")
-        #                     distinct_table.disposition
     ) \
         .count()
 
