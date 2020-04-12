@@ -25,6 +25,6 @@ command; `spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3
 
 ![Job batch result](stats_batch_spark.png)
 
-Query Progress bar 1             |  Query Progress bar 1
+Query Progress bar 1             |  Query Progress bar 2
 :-------------------------:|:-------------------------:
 ![](query_progress_1.png)  |  ![](query_progress_2.png)
